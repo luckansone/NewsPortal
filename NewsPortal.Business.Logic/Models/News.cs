@@ -10,7 +10,7 @@ namespace NewsPortal.Business.Logic.Models
         public string Content { get; set; }
         public string UserName { get; set; }
         public DateTime PublishTime { get; set; }
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
         public ICollection<Tag> Tags { get; set; }
 
         public News()

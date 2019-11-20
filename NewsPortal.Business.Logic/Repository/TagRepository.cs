@@ -28,7 +28,7 @@ namespace NewsPortal.Business.Logic.Repository
 
         public List<Tag> GetTagsById(int NewsId)
         {
-            return this.context.Tags.Where(x=>x.News.Id==NewsId).ToList();
+            return this.context.Tags.Where(x=>x.NewsId==NewsId).ToList();
         }
 
         public void UpdateTag(Tag newTag)

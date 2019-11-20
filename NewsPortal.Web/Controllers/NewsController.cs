@@ -12,11 +12,14 @@ namespace NewsPortal.Web.Controllers
 {
     public class NewsController : Controller
     {
-        NewsRepository repository { get; set; }
+        NewsRepository NewsRepository { get; set; }
+        CategoryRepository CategoryRepository { get; set; }
 
         public NewsController()
         {
-            repository = new NewsRepository();
+            NewsRepository = new NewsRepository();
+            CategoryRepository = new CategoryRepository();
+            
         }
         // GET: News
         public ActionResult GetNewsByUser()
@@ -26,7 +29,7 @@ namespace NewsPortal.Web.Controllers
                 var config = new MapperConfiguration(cfg => { cfg.CreateMap<News, NewsModel>(); cfg.AllowNullCollections=true; });
                 IMapper mapper = config.CreateMapper();
                 string UserName = User.Identity.Name;
-                var models = mapper.Map<List<News>, List<NewsModel>>(repository.GetAllByUserName(UserName));
+                var models = mapper.Map<List<News>, List<NewsModel>>(NewsRepository.GetAllByUserName(UserName));
                 ViewBag.Author = UserName;
                 return View(models);
             }
@@ -38,16 +41,23 @@ namespace NewsPortal.Web.Controllers
 
         public ActionResult Details(int id)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<News, NewsModel>());
+            var config = new MapperConfiguration(cfg => { cfg.CreateMap<News, NewsModel>();});
             IMapper mapper = config.CreateMapper();
-            var model = mapper.Map<News, NewsModel>(repository.GetNewsById(id));
+            var model = mapper.Map<News, NewsModel>(NewsRepository.GetNewsById(id));
             model.UserName = User.Identity.Name;
             return View(model);
         }
 
         public ActionResult Create()
         {
-            return View(new NewsModel());
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<Category, CategoryModel>();
+            });
+            IMapper mapper = config.CreateMapper();
+            NewsModel model = new NewsModel();
+            List<CategoryModel> categories = mapper.Map<List<Category>, List<CategoryModel>>(CategoryRepository.GetCategories());
+            model.Categories = new SelectList(categories, "Id", "Name", 1);
+            return View(model);
         }
 
         [HttpPost]
@@ -57,12 +67,16 @@ namespace NewsPortal.Web.Controllers
             {
                 return View(model);
             }
-
             model.UserName = User.Identity.Name;
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<NewsModel, News>());
+            var config = new MapperConfiguration(cfg => { cfg.CreateMap<NewsModel, News>();
+                                                          cfg.CreateMap<CategoryModel, Category>();
+                                                          cfg.CreateMap<Category, CategoryModel>();
+                                                         });
             IMapper mapper = config.CreateMapper();
+            List<CategoryModel> categories = mapper.Map<List<Category>, List<CategoryModel>>(CategoryRepository.GetCategories());
+            model.Categories = new SelectList(categories, "Id", "Name",1);
             var newModel = mapper.Map<NewsModel, News>(model);
-            repository.CreateNews(newModel);
+            NewsRepository.CreateNews(newModel);
             return View("Details", model);
         }
 
@@ -70,7 +84,7 @@ namespace NewsPortal.Web.Controllers
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<News, NewsModel>());
             IMapper mapper = config.CreateMapper();
-            var model = mapper.Map<News, NewsModel>(repository.GetNewsById(id));
+            var model = mapper.Map<News, NewsModel>(NewsRepository.GetNewsById(id));
             model.UserName = User.Identity.Name;
             return View(model);
         }
@@ -84,17 +98,21 @@ namespace NewsPortal.Web.Controllers
             }
 
             model.UserName = User.Identity.Name;
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<NewsModel, News>());
+            var config = new MapperConfiguration(cfg => { cfg.CreateMap<NewsModel, News>();
+                                                          cfg.CreateMap<Category, CategoryModel>();
+            });
             IMapper mapper = config.CreateMapper();
+            List<CategoryModel> categories = mapper.Map<List<Category>, List<CategoryModel>>(CategoryRepository.GetCategories());
+            model.Categories = new SelectList(categories, "Id", "Name", 1);
             var newModel = mapper.Map<NewsModel, News>(model);
-            repository.UpdateNews(newModel);
+            NewsRepository.UpdateNews(newModel);
             return View("Details", model);
         }
         public ActionResult Delete(int id)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<News, NewsModel>());
             IMapper mapper = config.CreateMapper();
-            var model = mapper.Map<News, NewsModel>(repository.GetNewsById(id));
+            var model = mapper.Map<News, NewsModel>(NewsRepository.GetNewsById(id));
             model.UserName = User.Identity.Name;
             return View(model);
         }
@@ -102,7 +120,7 @@ namespace NewsPortal.Web.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection form)
         {
-            repository.DeleteNews(id);
+            NewsRepository.DeleteNews(id);
             return RedirectToAction("GetNewsByUser");
         }
     }

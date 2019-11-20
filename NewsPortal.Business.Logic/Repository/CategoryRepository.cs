@@ -22,5 +22,9 @@ namespace NewsPortal.Business.Logic.Repository
             return this.context.Categories.ToList();
         }
 
+        //public Category GetCategoryByNewsId(int id)
+        //{
+        //    return this.context.Categories.ToList().Find(x=>x.)
+        //}
     }
 }

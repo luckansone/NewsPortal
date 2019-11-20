@@ -163,6 +163,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911181932543_InitialCreate.cs" />
+    <Compile Include="Migrations\201911181932543_InitialCreate.Designer.cs">
+      <DependentUpon>201911181932543_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911201208395_Change models id to id.cs" />
+    <Compile Include="Migrations\201911201208395_Change models id to id.Designer.cs">
+      <DependentUpon>201911201208395_Change models id to id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911201229065_migration01.cs" />
+    <Compile Include="Migrations\201911201229065_migration01.Designer.cs">
+      <DependentUpon>201911201229065_migration01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationUserManager.cs" />
@@ -237,6 +250,17 @@
       <Project>{e37adf89-2752-4176-9ed4-8ca281971a8f}</Project>
       <Name>NewsPortal.Business.Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201911181932543_InitialCreate.resx">
+      <DependentUpon>201911181932543_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911201208395_Change models id to id.resx">
+      <DependentUpon>201911201208395_Change models id to id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911201229065_migration01.resx">
+      <DependentUpon>201911201229065_migration01.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

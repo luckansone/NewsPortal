@@ -108,3 +108,7 @@ C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\ob
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\AutoMapper.dll
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\AutoMapper.pdb
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\AutoMapper.xml
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.Migrations.InitialCreate.resources
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.csproj.GenerateResource.cache
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.Migrations.Changemodelsidtoid.resources
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.Migrations.migration01.resources

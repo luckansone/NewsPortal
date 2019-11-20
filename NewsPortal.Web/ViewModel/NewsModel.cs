@@ -1,8 +1,10 @@
-﻿using System;
+﻿using AutoMapper.Configuration.Annotations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace NewsPortal.Web.ViewModel
 {
@@ -19,6 +21,13 @@ namespace NewsPortal.Web.ViewModel
 
         [DataType(DataType.Date)]
         public DateTime PublishTime { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public string CategoryName { get; set; }
+
+        [Ignore]
+        public SelectList Categories { get; set; }
 
     }
 }
