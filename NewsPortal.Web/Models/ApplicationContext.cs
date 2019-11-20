@@ -16,6 +16,6 @@ namespace NewsPortal.Web.Models
             return new ApplicationContext();
         }
 
-        public System.Data.Entity.DbSet<NewsPortal.Web.ViewModel.NewsModel> NewsModels { get; set; }
+        //public System.Data.Entity.DbSet<NewsPortal.Business.Logic.Models.News> News { get; set; }
     }
 }

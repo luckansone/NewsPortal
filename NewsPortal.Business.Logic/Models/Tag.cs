@@ -8,7 +8,7 @@ namespace NewsPortal.Business.Logic.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public News News { get; set; }
+        public int NewsId { get; set; }
 
     }
 }
