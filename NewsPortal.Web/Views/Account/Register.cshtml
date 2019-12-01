@@ -4,46 +4,51 @@
     ViewBag.Title = "Register";
 }
 
-<h2>Registration</h2>
+<html>
+<body>
+    <h2>Registration</h2>
 
 
-@using (Html.BeginForm(new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
+    @using (Html.BeginForm(new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
 
-<div>
-    <hr />
-    @Html.ValidationSummary(true)
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-            @Html.ValidationMessage("UserName", "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                    @Html.ValidationMessage("UserName", "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessage("Password", "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PasswordConfirm, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.PasswordConfirm, new { @class = "form-control" })
+                    @Html.ValidationMessage("PasswordConfirm", "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-info" value="Register" />
+                </div>
+            </div>
         </div>
-    </div>
-    <div></div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-            @Html.ValidationMessage("Password", "", new { @class = "text-danger" })
-        </div>
-        
-    </div>
-    <div></div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.PasswordConfirm, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.PasswordConfirm, new { @class = "form-control" })
-            @Html.ValidationMessage("PasswordConfirm", "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div></div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-</div>
-}
+    }
+</body>
+</html>
+<style>
+    body {
+        background-image: url(../../Content/img/wall.png);
+        background-attachment: fixed;
+    }
+</style>

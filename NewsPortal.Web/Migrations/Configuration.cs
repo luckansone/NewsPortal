@@ -10,7 +10,6 @@ namespace NewsPortal.Web.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "NewsPortal.Web.Models.ApplicationContext";
         }
 
         protected override void Seed(NewsPortal.Web.Models.ApplicationContext context)

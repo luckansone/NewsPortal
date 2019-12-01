@@ -94,10 +94,12 @@ namespace NewsPortal.Web.Controllers
             ViewBag.returnUrl = returnUrl;
             return View(model);
         }
+
         public ActionResult Logout()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index");
+            Session.Abandon();
+            return RedirectToAction("Index","Home");
         }
     }
 }

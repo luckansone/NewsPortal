@@ -22,9 +22,9 @@ namespace NewsPortal.Web.ViewModel
         [DataType(DataType.Date)]
         public DateTime PublishTime { get; set; }
 
-        public int CategoryId { get; set; }
+        public CategoryModel Category { get; set; }
 
-        public string CategoryName { get; set; }
+        public List<TagModel> Tags { get; set; }
 
         [Ignore]
         public SelectList Categories { get; set; }

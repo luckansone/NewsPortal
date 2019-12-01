@@ -3,32 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NewsPortal.Business.Logic.Interfaces;
 using NewsPortal.Business.Logic.Models;
 
 namespace NewsPortal.Business.Logic.Repository
 {
-    public class TagRepository
+    public class TagRepository: ITagRepository
     {
-        public static TagRepository instance = new TagRepository();
-        PortalContext context { get; set; }
-        public TagRepository()
+        IPortalContext context { get; set; }
+        public TagRepository(IPortalContext portalContext)
         {
-            context = new PortalContext(); 
+            context = portalContext;
         }
 
-        public void CreateTag(string name)
+        public void CreateTag(Tag newTag)
         {
-            Tag newTag = new Tag()
-            {
-                Name = name
-            };
             this.context.Tags.Add(newTag);
             this.context.SaveChanges();
         }
 
         public List<Tag> GetTagsById(int NewsId)
         {
-            return this.context.Tags.Where(x=>x.NewsId==NewsId).ToList();
+            return this.context.Tags.Where(x=>x.NewsId == NewsId).ToList();
+        }
+
+        public Tag GetTag(int Id)
+        {
+            return this.context.Tags.ToList().Find(x => x.Id == Id);
         }
 
         public void UpdateTag(Tag newTag)
