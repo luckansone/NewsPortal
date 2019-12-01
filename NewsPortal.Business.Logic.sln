@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Business.Logic", "NewsPortal.Business.Logic\NewsPortal.Business.Logic.csproj", "{E37ADF89-2752-4176-9ED4-8CA281971A8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal..Business.Logic", "NewsPortal.Business.Logic\NewsPortal..Business.Logic.csproj", "{E37ADF89-2752-4176-9ED4-8CA281971A8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Web", "NewsPortal.Web\NewsPortal.Web.csproj", "{C860E0D7-69B8-4E2B-95E2-2BDD4F8AFB4C}"
 EndProject

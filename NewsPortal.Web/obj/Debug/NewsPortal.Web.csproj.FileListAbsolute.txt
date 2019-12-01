@@ -108,7 +108,13 @@ C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\ob
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\AutoMapper.dll
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\AutoMapper.pdb
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\AutoMapper.xml
-C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.Migrations.InitialCreate.resources
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.Migrations.InitializeIdentitydatabase.resources
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.csproj.GenerateResource.cache
-C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.Migrations.Changemodelsidtoid.resources
-C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.Migrations.migration01.resources
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\obj\Debug\NewsPortal.Web.Migrations.modifycontext.resources
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\Unity.Abstractions.dll
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\Unity.Container.dll
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\Unity.Mvc5.dll
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\Unity.Abstractions.pdb
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Web\bin\Unity.Container.pdb

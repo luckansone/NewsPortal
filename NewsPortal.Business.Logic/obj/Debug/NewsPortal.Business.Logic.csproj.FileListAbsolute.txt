@@ -6,12 +6,9 @@ C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Busine
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\bin\Debug\EntityFramework.xml
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.csprojAssemblyReference.cache
-C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.Migrations.Initialize_Database.resources
-C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.csproj.GenerateResource.cache
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.csproj.CoreCompileInputs.cache
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.csproj.CopyComplete
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.dll
 C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.pdb
-C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.Migrations.AddPublishDatetoNews.resources
-C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.Migrations.UserNameinsteadofUserId.resources
-C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.Migrations.migration01.resources
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.Migrations.InitializeDatabase.resources
+C:\Users\Helen Kravchuk\source\repos\NewsPortal.Business.Logic\NewsPortal.Business.Logic\obj\Debug\NewsPortal.Business.Logic.csproj.GenerateResource.cache

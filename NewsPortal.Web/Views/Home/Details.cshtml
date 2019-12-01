@@ -1,0 +1,45 @@
+﻿@model NewsPortal.Web.ViewModel.NewsModel
+
+<html>
+<body>
+    <div>
+        <h4>News Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Content)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Content)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PublishTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PublishTime)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+    </p>
+</body>
+</html>
+<style>
+    body {
+        background-image: url(../../Content/img/wall.png);
+        background-attachment: fixed;
+    }
+</style>

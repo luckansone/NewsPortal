@@ -11,6 +11,8 @@ namespace NewsPortal.Web.ViewModel
         public int Id { get; set; }
 
         [Required(ErrorMessage ="Enter tag name.")]
-        public int Name { get; set; }
+        public string Name { get; set; }
+        
+        public int NewsId { get; set; }
     }
 }
