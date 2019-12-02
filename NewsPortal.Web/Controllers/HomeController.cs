@@ -1,5 +1,4 @@
-﻿using NewsPortal.Business.Logic.Repository;
-using NewsPortal.Web.Mapping;
+﻿using NewsPortal.Web.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +13,9 @@ namespace NewsPortal.Web.Controllers
     public class HomeController : Controller
     {
         IMapperControl Mapper { get; set; }
-        INewsRepository NewsRepository { get; set; }
 
-        public HomeController(INewsRepository NewsRepository, IMapperControl mapperControl)
-        {
-            this.NewsRepository = NewsRepository;
-          
+        public HomeController( IMapperControl mapperControl)
+        { 
             Mapper = mapperControl;
         }
         public ActionResult Index()
