@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using NewsPortal.Business.Logic.Interfaces;
 using NewsPortal.Business.Logic.Models;
-using NewsPortal.Business.Logic.Repository;
 using NewsPortal.Web.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -12,14 +11,14 @@ namespace NewsPortal.Web.Mapping
 {
     public class MapperControl: IMapperControl
     {
-        INewsRepository NewsRepository { get; set; }
-        ICategoryRepository CategoryRepository { get; set; }
+        INewsService NewsRepository { get; set; }
+        ICategoryService CategoryRepository { get; set; }
 
-        ITagRepository TagRepository { get; set; }
+        ITagService TagRepository { get; set; }
         MapperConfiguration config { get; set; }
         IMapper mapper { get; set; }
 
-        public MapperControl(INewsRepository NewsRepository,ITagRepository TagRepository, ICategoryRepository CategoryRepository )
+        public MapperControl(INewsService NewsRepository,ITagService TagRepository, ICategoryService CategoryRepository )
         {
             this.NewsRepository = NewsRepository;
             this.CategoryRepository = CategoryRepository;

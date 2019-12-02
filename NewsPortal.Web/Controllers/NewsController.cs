@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using NewsPortal.Business.Logic.Interfaces;
 using NewsPortal.Business.Logic.Models;
-using NewsPortal.Business.Logic.Repository;
+using NewsPortal.Business.Logic.Services;
 using NewsPortal.Web.Mapping;
 using NewsPortal.Web.ViewModel;
 
@@ -14,17 +14,17 @@ namespace NewsPortal.Web.Controllers
 {
     public class NewsController : Controller
     {
-        INewsRepository NewsRepository { get; set; }
-        ITagRepository TagRepository { get; set; }
+        INewsService NewsService { get; set; }
+        ITagService TagService { get; set; }
     
         IMapperControl Mapper { get; set; }
 
         private static int NewsId { get; set; }
 
-        public NewsController(ITagRepository TagRepository, INewsRepository NewsRepository,  IMapperControl mapperControl)
+        public NewsController(ITagService TagService, INewsService NewsService,  IMapperControl mapperControl)
         {
-            this.TagRepository = TagRepository;
-            this.NewsRepository = NewsRepository;
+            this.TagService = TagService;
+            this.NewsService = NewsService;
             Mapper = mapperControl;
          
         }
@@ -46,7 +46,7 @@ namespace NewsPortal.Web.Controllers
 
         public ActionResult GetTagsByNews(int id)
         {
-            var newsModel = Mapper.GetNewsModelByNews(NewsRepository.GetNewsById(id));
+            var newsModel = Mapper.GetNewsModelByNews(NewsService.GetNewsById(id));
             ViewBag.News = newsModel.Title;
             var tagsModel = Mapper.GetTagModelsByNews(id);
             NewsId = id;
@@ -77,7 +77,7 @@ namespace NewsPortal.Web.Controllers
 
             model.NewsId = NewsId;
             var newTag = Mapper.GetTagByTagModel(model);
-            TagRepository.CreateTag(newTag);
+            TagService.CreateTag(newTag);
             return View("GetTagsByNews", Mapper.GetTagModelsByNews(model.NewsId));
         }
 
@@ -100,9 +100,9 @@ namespace NewsPortal.Web.Controllers
             model.UserName = User.Identity.Name;
             var categories = Mapper.GetCategoryModels();
             model.Categories = new SelectList(categories, "Id", "Name",1);
-            model.Category = Mapper.GetCategoryModelById(model.Category.Id);
+            model.CategoryName = Mapper.GetCategoryModelById(model.Id).Name;
             var newModel = Mapper.GetNewsByNewsModel(model);
-            NewsRepository.CreateNews(newModel);
+            NewsService.CreateNews(newModel);
             return View("Details", model);
         }
 
@@ -127,9 +127,9 @@ namespace NewsPortal.Web.Controllers
   
             var categories = Mapper.GetCategoryModels();
             model.Categories = new SelectList(categories, "Id", "Name", 1);
-            model.Category = Mapper.GetCategoryModelById(model.Category.Id);
+            model.CategoryName = Mapper.GetCategoryModelById(model.CategoryId).Name;
             var newModel = Mapper.GetNewsByNewsModel(model);
-            NewsRepository.UpdateNews(newModel);
+            NewsService.UpdateNews(newModel);
             return View("Details", model);
         }
 
@@ -137,14 +137,14 @@ namespace NewsPortal.Web.Controllers
         [ActionName("Delete")]
         public void Delete(int id)
         {    
-            NewsRepository.DeleteNews(id);
+            NewsService.DeleteNews(id);
         }
 
         [HttpDelete]
         [ActionName("DeleteTag")]
         public void DeleteTag(int id)
         {
-            TagRepository.DeleteTag(id);
+            TagService.DeleteTag(id);
         }
     }
 }

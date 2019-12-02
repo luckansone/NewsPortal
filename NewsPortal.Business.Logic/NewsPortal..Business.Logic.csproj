@@ -50,10 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ICategoryRepository.cs" />
-    <Compile Include="Interfaces\INewsRepository.cs" />
-    <Compile Include="Interfaces\IPortalContext.cs" />
-    <Compile Include="Interfaces\ITagRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICategoryRepository.cs" />
+    <Compile Include="Interfaces\Repositories\INewsRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITagRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUnitRepository.cs" />
+    <Compile Include="Interfaces\Services\ICategoryService.cs" />
+    <Compile Include="Interfaces\Services\INewsService.cs" />
+    <Compile Include="Interfaces\Models\IPortalContext.cs" />
+    <Compile Include="Interfaces\Services\ITagService.cs" />
     <Compile Include="Migrations\201911241928192_Initialize Database.cs" />
     <Compile Include="Migrations\201911241928192_Initialize Database.Designer.cs">
       <DependentUpon>201911241928192_Initialize Database.cs</DependentUpon>
@@ -64,9 +68,13 @@
     <Compile Include="Models\PortalContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Tag.cs" />
-    <Compile Include="Repository\CategoryRepository.cs" />
-    <Compile Include="Repository\NewsRepository.cs" />
-    <Compile Include="Repository\TagRepository.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\NewsRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\UnitRepository.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\NewsService.cs" />
+    <Compile Include="Services\TagService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
